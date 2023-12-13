@@ -9,10 +9,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56b7fe25-bb81-4a9b-8c4d-725c8f33c8f4" name="Changes" comment="changed root address">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/repository/MainRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/mainJsp.jsp" afterDir="false" />
+    <list default="true" id="56b7fe25-bb81-4a9b-8c4d-725c8f33c8f4" name="Changes" comment="added old project (DI-container)">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/db/ConnectionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/dto/ProductDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/item/ProductItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/repository/rep_annotations/ORM_column.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/repository/rep_annotations/ORM_id.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/repository/rep_annotations/ORM_table.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/repository/reps/ProductRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/repository/MainRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/repository/MainRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/servlet/MainServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/servlet/MainServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +33,7 @@
       <list>
         <option value="Jsp File" />
         <option value="Class" />
+        <option value="AnnotationType" />
       </list>
     </option>
   </component>
@@ -53,13 +62,14 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "project.structure.last.edited": "Artifacts",
+    "last_opened_file_path": "C:/Users/user/IdeaProjects/java-2023/lib/h2-2.2.224.jar",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.84">
+  <component name="RunManager" selected="Application.ru.vsu.cs.sapegin.App">
     <configuration name="ru.vsu.cs.sapegin.App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.vsu.cs.sapegin.App" />
       <module name="java-2023" />
@@ -179,7 +189,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1702480731094</updated>
-      <workItem from="1702480732548" duration="6362000" />
+      <workItem from="1702480732548" duration="19497000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1702484534292</created>
@@ -195,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702484681801</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added old project (DI-container)">
+      <created>1702489263928</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1702489263928</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,6 +232,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="changed root address" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed root address" />
+    <MESSAGE value="added old project (DI-container)" />
+    <option name="LAST_COMMIT_MESSAGE" value="added old project (DI-container)" />
   </component>
 </project>
