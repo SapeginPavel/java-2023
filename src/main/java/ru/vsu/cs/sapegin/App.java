@@ -13,7 +13,7 @@ public class App
     public static void main( String[] args )
     {
         MainRepository<ProductItem, Integer> productRepository = new MainRepository<>(ProductItem.class);
-        ProductItem productItem = productRepository.findById(1);
+        ProductItem productItem = productRepository.findById(2);
         System.out.println(productItem);
     }
 }

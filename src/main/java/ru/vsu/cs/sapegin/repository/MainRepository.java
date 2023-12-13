@@ -53,14 +53,11 @@ public class MainRepository<ITEM, ID> {
             resultSet.next();
 
             ITEM item = clazzOfItem.getDeclaredConstructor().newInstance();
-            System.out.println("item: " + item);
             Field[] fields = item.getClass().getDeclaredFields();
-            System.out.println("Кол-во полей: " + fields.length);
             for (Field f : fields) {
                 f.setAccessible(true); //установка доступа к приватным полям
                 ORM_column column_name = f.getAnnotation(ORM_column.class);
                 Object value = resultSet.getObject(column_name.column_name(), f.getType());
-                System.out.println("value = " + value);
                 f.set(item, value); //устанавливаем для какого-то объекта item значение value в поле f
             }
 

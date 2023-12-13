@@ -9,19 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56b7fe25-bb81-4a9b-8c4d-725c8f33c8f4" name="Changes" comment="added old project (DI-container)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/db/ConnectionManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/dto/ProductDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/item/ProductItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/repository/rep_annotations/ORM_column.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/repository/rep_annotations/ORM_id.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/repository/rep_annotations/ORM_table.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/repository/reps/ProductRepository.java" afterDir="false" />
+    <list default="true" id="56b7fe25-bb81-4a9b-8c4d-725c8f33c8f4" name="Changes" comment="it works a little">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/repository/MainRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/repository/MainRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/servlet/MainServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/servlet/MainServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/repository/reps/ProductRepository.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +181,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1702480731094</updated>
-      <workItem from="1702480732548" duration="19497000" />
+      <workItem from="1702480732548" duration="20653000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1702484534292</created>
@@ -212,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702489263928</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="it works a little">
+      <created>1702502934922</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1702502934922</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,6 +232,7 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="changed root address" />
     <MESSAGE value="added old project (DI-container)" />
-    <option name="LAST_COMMIT_MESSAGE" value="added old project (DI-container)" />
+    <MESSAGE value="it works a little" />
+    <option name="LAST_COMMIT_MESSAGE" value="it works a little" />
   </component>
 </project>
