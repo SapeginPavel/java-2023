@@ -1,6 +1,7 @@
 package ru.vsu.cs.sapegin.dependencies;
 
 import ru.vsu.cs.sapegin.App;
+import ru.vsu.cs.sapegin.dependencies.annotation.Bean;
 import ru.vsu.cs.sapegin.dependencies.annotation.Component;
 import ru.vsu.cs.sapegin.dependencies.annotation.Inject;
 
@@ -28,11 +29,11 @@ public class BeanFactory {
         if (clazz.isInterface()) {
             List<Class<?>> allClasses = Utils.findAllClasses();
             for (Class<?> cl : allClasses) {
-                if (clazz.isAssignableFrom(cl) && cl.isAnnotationPresent(Component.class)) {
+                if (clazz.isAssignableFrom(cl) && (cl.isAnnotationPresent(Component.class) || cl.isAnnotationPresent(Bean.class))) {
                     return (Class<T>) cl;
                 }
             }
-        } else if (clazz.isAnnotationPresent(Component.class)){
+        } else if (clazz.isAnnotationPresent(Component.class) || clazz.isAnnotationPresent(Bean.class)){
             return (Class<T>) clazz;
         }
         throw new Exception(String.format("Does not exist implementation for %s", clazz));

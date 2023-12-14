@@ -1,17 +1,20 @@
 package ru.vsu.cs.sapegin;
 
+import ru.vsu.cs.sapegin.dependencies.ApplicationContext;
 import ru.vsu.cs.sapegin.service.impl.DepartmentServiceImpl;
 
 public class App {
     public static void main( String[] args ) throws Exception {
-//        Starter starter = new Starter();
-//        try {
-//            starter.initializeAll();
-//        } catch (Exception e) {
-//            throw new Exception("Не удалось проинициализировать бины");
-//        }
+        Starter starter = new Starter();
+        try {
+            starter.initializeAll();
+        } catch (Exception e) {
+            throw new Exception("Не удалось проинициализировать бины");
+        }
 
-        Testing t1 = new Testing();
+        ApplicationContext ap = starter.getApplicationContext();
+
+        Testing t1 = ap.getBean(Testing.class);
         t1.testGettingOfData();
 
 //        MainRepository<ProductItem, Integer> productRepository = new MainRepository<>(ProductItem.class);

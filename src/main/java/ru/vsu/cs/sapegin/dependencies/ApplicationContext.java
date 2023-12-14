@@ -24,12 +24,13 @@ public class ApplicationContext {
         if (beans.containsKey(clazz) && !clazz.isAnnotationPresent(NotSingleton.class)) {
             return (T) beans.get(clazz);
         }
-
         T bean = beanFactory.getBean(clazz);
 
         if (!clazz.isAnnotationPresent(NotSingleton.class)) {
             beans.put(clazz, bean);
         }
+
+        doInjects(List.of(bean));
         return bean;
     }
 
@@ -40,9 +41,12 @@ public class ApplicationContext {
                 this.getBean(cl);
             }
         }
+        Collection<Object> allBeans = this.getAllBeans();
+        doInjects(allBeans);
+    }
 
-        List<Collection<Object>> allBeans = this.getAllBeans();
-        for (Object o : allBeans) {
+    private void doInjects(Collection<Object> beans) throws Exception {
+        for (Object o : beans) {
             for (Field field : Arrays.stream(o.getClass().getDeclaredFields()).filter(field -> field.isAnnotationPresent(Inject.class)).toList()) {
                 field.setAccessible(true);
                 Inject annotation = field.getAnnotation(Inject.class);
@@ -53,10 +57,9 @@ public class ApplicationContext {
                 }
             }
         }
-
     }
 
-    public <T> List<Collection<Object>> getAllBeans() {
-        return List.of(beans.values());
+    public <T> Collection<Object> getAllBeans() {
+        return beans.values();
     }
 }
