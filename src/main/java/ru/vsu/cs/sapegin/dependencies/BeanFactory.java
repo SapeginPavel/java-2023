@@ -21,15 +21,6 @@ public class BeanFactory {
         Class<T> cl = getImplementationOf(clazz);
         T bean = cl.getDeclaredConstructor().newInstance();
 
-        for (Field field : Arrays.stream(clazz.getDeclaredFields()).filter(field -> field.isAnnotationPresent(Inject.class)).toList()) {
-            field.setAccessible(true);
-            Inject annotation = field.getAnnotation(Inject.class);
-            if (annotation.clazz() == App.class) {
-                field.set(bean, getBean(field.getType()));
-            } else {
-                field.set(bean, getBean(annotation.clazz()));
-            }
-        }
         return bean;
     }
 

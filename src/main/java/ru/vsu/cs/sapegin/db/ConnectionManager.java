@@ -1,14 +1,14 @@
 package ru.vsu.cs.sapegin.db;
 
 import ru.vsu.cs.sapegin.dependencies.annotation.Component;
-import ru.vsu.cs.sapegin.dependencies.annotation.Singleton;
+import ru.vsu.cs.sapegin.dependencies.annotation.NotSingleton;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 @Component
-@Singleton
+@NotSingleton
 public class ConnectionManager {
     public static final String DB_URL = "jdbc:h2:~/shop";
     public static final String DB_USER = "sa";

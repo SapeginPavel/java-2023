@@ -8,6 +8,17 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class MainServlet extends HttpServlet {
+
+    @Override
+    public void init() throws ServletException {
+        //тут пишем все инициализации
+    }
+
+    @Override
+    public void destroy() {
+        //тут закрытие ресурсов
+    }
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter pw = resp.getWriter();

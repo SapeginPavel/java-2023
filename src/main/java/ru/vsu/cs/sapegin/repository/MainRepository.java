@@ -36,7 +36,7 @@ public class MainRepository<ITEM, ID> {
         }
     }
 
-    public ITEM findById(ID id) { //todo: попытаться с Object
+    public ITEM findById(ID id) {
         try (
             Connection connection = DriverManager.getConnection(
                 ConnectionManager.DB_URL,
