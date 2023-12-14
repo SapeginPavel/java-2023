@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 @Bean
 public class ProductRepository extends MainRepository<ProductItem, Integer> {
-    public ProductRepository() throws SQLException {
+    public ProductRepository() throws Exception {
         super(ProductItem.class);
     }
 }

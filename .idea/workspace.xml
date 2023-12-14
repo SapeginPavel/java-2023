@@ -9,8 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56b7fe25-bb81-4a9b-8c4d-725c8f33c8f4" name="Changes" comment="before auto-inject of ConnectionManager (now correctly)">
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/service/impl/DepartmentProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/service/impl/DepartmentProductServiceImpl.java" afterDir="false" />
+    <list default="true" id="56b7fe25-bb81-4a9b-8c4d-725c8f33c8f4" name="Changes" comment="before auto-inject of ConnectionManager (now correctly) (3)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/Starter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/Starter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/dependencies/annotation/Inject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/dependencies/annotation/Inject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/repository/MainRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/repository/MainRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/repository/reps/DepartmentProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/repository/reps/DepartmentProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/repository/reps/DepartmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/repository/reps/DepartmentRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +190,7 @@
       <option name="presentableId" value="Default" />
       <updated>1702480731094</updated>
       <workItem from="1702480732548" duration="23005000" />
-      <workItem from="1702540138488" duration="9968000" />
+      <workItem from="1702540138488" duration="12207000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1702484534292</created>
@@ -278,7 +283,21 @@
       <option name="project" value="LOCAL" />
       <updated>1702556293065</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="before auto-inject of ConnectionManager (now correctly) (2)">
+      <created>1702556566718</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1702556566718</updated>
+    </task>
+    <task id="LOCAL-00015" summary="before auto-inject of ConnectionManager (now correctly) (3)">
+      <created>1702556630125</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1702556630125</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,6 +328,8 @@
     <MESSAGE value="before connecting of beanInitialization (2) - new class Testing" />
     <MESSAGE value="before auto-inject of ConnectionManager" />
     <MESSAGE value="before auto-inject of ConnectionManager (now correctly)" />
-    <option name="LAST_COMMIT_MESSAGE" value="before auto-inject of ConnectionManager (now correctly)" />
+    <MESSAGE value="before auto-inject of ConnectionManager (now correctly) (2)" />
+    <MESSAGE value="before auto-inject of ConnectionManager (now correctly) (3)" />
+    <option name="LAST_COMMIT_MESSAGE" value="before auto-inject of ConnectionManager (now correctly) (3)" />
   </component>
 </project>

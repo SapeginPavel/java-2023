@@ -11,7 +11,8 @@ public class App {
             throw new Exception("Не удалось проинициализировать бины");
         }
 
-        ApplicationContext ap = starter.getApplicationContext();
+//        ApplicationContext ap = starter.getApplicationContext();
+        ApplicationContext ap = Starter.applicationContext;
 
         Testing t1 = ap.getBean(Testing.class);
         t1.testGettingOfDep();

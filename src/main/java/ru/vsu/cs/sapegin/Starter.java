@@ -6,7 +6,7 @@ import ru.vsu.cs.sapegin.dependencies.BeanFactory;
 
 @Getter
 public class Starter {
-    private ApplicationContext applicationContext;
+    public static ApplicationContext applicationContext;
     public void initializeAll() throws Exception {
         applicationContext = new ApplicationContext();
         BeanFactory beanFactory = new BeanFactory(applicationContext);

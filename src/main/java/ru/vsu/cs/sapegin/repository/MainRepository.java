@@ -1,6 +1,8 @@
 package ru.vsu.cs.sapegin.repository;
 
+import ru.vsu.cs.sapegin.Starter;
 import ru.vsu.cs.sapegin.db.ConnectionManager;
+import ru.vsu.cs.sapegin.dependencies.annotation.Bean;
 import ru.vsu.cs.sapegin.dependencies.annotation.Inject;
 import ru.vsu.cs.sapegin.repository.rep_annotations.ORM_column;
 import ru.vsu.cs.sapegin.repository.rep_annotations.ORM_id;
@@ -11,8 +13,7 @@ import java.sql.*;
 
 public class MainRepository<ITEM, ID> {
 
-//    @Inject
-    ConnectionManager connectionManager;
+    private ConnectionManager connectionManager = Starter.applicationContext.getBean(ConnectionManager.class);
 
     //todo: параметризовать классы?
 
@@ -20,7 +21,7 @@ public class MainRepository<ITEM, ID> {
     String nameOfId;
     String nameOfTable;
 
-    public MainRepository(Class<ITEM> clazzOfItem) throws SQLException {
+    public MainRepository(Class<ITEM> clazzOfItem) throws Exception {
         this.clazzOfItem = clazzOfItem;
         handleItemClass();
     }
@@ -38,13 +39,14 @@ public class MainRepository<ITEM, ID> {
 
     public ITEM findById(ID id) {
         try (
-            Connection connection = DriverManager.getConnection(
-                ConnectionManager.DB_URL,
-                ConnectionManager.DB_USER,
-                ConnectionManager.DB_PASSWORD);
-//                Connection connection = connectionManager.getConnection();
+//            Connection connection = DriverManager.getConnection(
+//                ConnectionManager.DB_URL,
+//                ConnectionManager.DB_USER,
+//                ConnectionManager.DB_PASSWORD);
+                Connection connection = connectionManager.getConnection();
             PreparedStatement pStatement = connection.prepareStatement("select * from " + nameOfTable + " where " + nameOfId + " = " + id);
         ) {
+
             ResultSet resultSet = pStatement.executeQuery();
             resultSet.next();
 
