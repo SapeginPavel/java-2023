@@ -1,8 +1,6 @@
 package ru.vsu.cs.sapegin.db;
 
 import ru.vsu.cs.sapegin.dependencies.annotation.Bean;
-import ru.vsu.cs.sapegin.dependencies.annotation.Component;
-import ru.vsu.cs.sapegin.dependencies.annotation.NotSingleton;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

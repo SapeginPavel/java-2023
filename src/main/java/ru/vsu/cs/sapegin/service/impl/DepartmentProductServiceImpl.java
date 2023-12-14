@@ -1,7 +1,6 @@
 package ru.vsu.cs.sapegin.service.impl;
 
 import ru.vsu.cs.sapegin.dependencies.annotation.Bean;
-import ru.vsu.cs.sapegin.dependencies.annotation.Component;
 import ru.vsu.cs.sapegin.dependencies.annotation.Inject;
 import ru.vsu.cs.sapegin.repository.item.DepartmentProductItem;
 import ru.vsu.cs.sapegin.repository.reps.DepartmentProductRepository;
