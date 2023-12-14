@@ -11,6 +11,9 @@ public class App {
             throw new Exception("Не удалось проинициализировать бины");
         }
 
+
+
+
 //        ApplicationContext ap = starter.getApplicationContext();
         ApplicationContext ap = Starter.applicationContext;
 
@@ -18,6 +21,12 @@ public class App {
         t1.testGettingOfDep();
         t1.testGettingOfProd();
         t1.testGettingOfDepProd();
+        System.out.println("---");
+        t1.testGettingOfAllProducts();
+        t1.testAddingNewProduct();
+
+
+
 
 //        MainRepository<ProductItem, Integer> productRepository = new MainRepository<>(ProductItem.class);
 //        ProductItem productItem = productRepository.findById(2);

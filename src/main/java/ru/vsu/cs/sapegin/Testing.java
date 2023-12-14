@@ -3,6 +3,10 @@ package ru.vsu.cs.sapegin;
 import ru.vsu.cs.sapegin.dependencies.annotation.Component;
 import ru.vsu.cs.sapegin.dependencies.annotation.Inject;
 import ru.vsu.cs.sapegin.dependencies.annotation.NotSingleton;
+import ru.vsu.cs.sapegin.repository.item.ProductItem;
+import ru.vsu.cs.sapegin.service.DepartmentProductService;
+import ru.vsu.cs.sapegin.service.DepartmentService;
+import ru.vsu.cs.sapegin.service.ProductService;
 import ru.vsu.cs.sapegin.service.impl.DepartmentProductServiceImpl;
 import ru.vsu.cs.sapegin.service.impl.DepartmentServiceImpl;
 import ru.vsu.cs.sapegin.service.impl.ProductServiceImpl;
@@ -11,13 +15,13 @@ import ru.vsu.cs.sapegin.service.impl.ProductServiceImpl;
 @Component
 public class Testing {
     @Inject
-    DepartmentServiceImpl depService;
+    DepartmentService depService;
 
     @Inject
-    ProductServiceImpl productService;
+    ProductService productService;
 
     @Inject
-    DepartmentProductServiceImpl departmentProductService;
+    DepartmentProductService departmentProductService;
 
     public void testGettingOfDep() {
         System.out.println(depService.getById(1));
@@ -32,5 +36,19 @@ public class Testing {
     public void testGettingOfDepProd() {
         System.out.println(departmentProductService.getById(1));
         System.out.println(departmentProductService.getById(2));
+    }
+
+    public void testGettingOfAllDepartments() {
+//        System.out.println(depService.getAll());
+    }
+    public void testGettingOfAllProducts() {
+        System.out.println(productService.getAll());
+    }
+    public void testGettingOfAllDepartmentsProducts() {
+//        System.out.println(departmentProductService.getAll());
+    }
+
+    public void testAddingNewProduct() throws Exception {
+        System.out.println(productService.addProduct(new ProductItem(-1, "ТЕСТОВОЕ", 501)));
     }
 }

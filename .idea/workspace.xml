@@ -9,9 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56b7fe25-bb81-4a9b-8c4d-725c8f33c8f4" name="Changes" comment="intermediate commit">
+    <list default="true" id="56b7fe25-bb81-4a9b-8c4d-725c8f33c8f4" name="Changes" comment="new method in ManiRep - parseTupleIntoItemObject">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/Testing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/Testing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/repository/MainRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/repository/MainRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/repository/item/ProductItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/repository/item/ProductItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/service/impl/ProductServiceImpl.java" afterDir="false" />
     </list>
@@ -188,7 +191,7 @@
       <option name="presentableId" value="Default" />
       <updated>1702480731094</updated>
       <workItem from="1702480732548" duration="23005000" />
-      <workItem from="1702540138488" duration="13241000" />
+      <workItem from="1702540138488" duration="18035000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1702484534292</created>
@@ -309,7 +312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702559078152</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="new method in ManiRep - parseTupleIntoItemObject">
+      <created>1702559808628</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1702559808628</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,6 +354,7 @@
     <MESSAGE value="before auto-inject of ConnectionManager (now correctly) (3)" />
     <MESSAGE value="application context is static now" />
     <MESSAGE value="intermediate commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="intermediate commit" />
+    <MESSAGE value="new method in ManiRep - parseTupleIntoItemObject" />
+    <option name="LAST_COMMIT_MESSAGE" value="new method in ManiRep - parseTupleIntoItemObject" />
   </component>
 </project>

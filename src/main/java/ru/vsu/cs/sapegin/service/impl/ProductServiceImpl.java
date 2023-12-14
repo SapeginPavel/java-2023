@@ -7,6 +7,7 @@ import ru.vsu.cs.sapegin.repository.reps.ProductRepository;
 import ru.vsu.cs.sapegin.service.ProductService;
 
 import java.sql.SQLException;
+import java.util.List;
 
 @Bean
 public class ProductServiceImpl implements ProductService {
@@ -23,13 +24,13 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ProductItem getAll() {
-        return null;
+    public List<ProductItem> getAll() {
+        return productRepository.findAll();
     }
 
     @Override
-    public ProductItem addProduct(ProductItem newProductItem) {
-        return null;
+    public ProductItem addProduct(ProductItem newProductItem) throws Exception {
+        return productRepository.addItem(newProductItem);
     }
 
     @Override
