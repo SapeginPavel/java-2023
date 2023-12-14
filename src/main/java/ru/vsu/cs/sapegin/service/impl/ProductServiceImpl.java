@@ -21,4 +21,24 @@ public class ProductServiceImpl implements ProductService {
     public ProductItem getById(int id) {
         return productRepository.findById(id);
     }
+
+    @Override
+    public ProductItem getAll() {
+        return null;
+    }
+
+    @Override
+    public ProductItem addProduct(ProductItem newProductItem) {
+        return null;
+    }
+
+    @Override
+    public ProductItem updateProduct(int id, ProductItem updatedProductItem) {
+        return null;
+    }
+
+    @Override
+    public ProductItem deleteProduct(int id) {
+        return null;
+    }
 }
