@@ -1,13 +1,15 @@
-package ru.vsu.cs.sapegin.item;
+package ru.vsu.cs.sapegin.repository.item;
 
 import lombok.ToString;
 import ru.vsu.cs.sapegin.repository.rep_annotations.ORM_column;
 import ru.vsu.cs.sapegin.repository.rep_annotations.ORM_id;
 import ru.vsu.cs.sapegin.repository.rep_annotations.ORM_table;
 
-@ORM_table(table_name = "product")
+import java.sql.Time;
+
+@ORM_table(table_name = "department")
 @ToString
-public class ProductItem {
+public class DepartmentItem {
 
     @ORM_id
     @ORM_column(column_name = "id")
@@ -16,6 +18,9 @@ public class ProductItem {
     @ORM_column(column_name = "name")
     String name;
 
-    @ORM_column(column_name = "cost")
-    Integer cost;
+    @ORM_column(column_name = "open_time")
+    Time openTime;
+
+    @ORM_column(column_name = "close_time")
+    Time closeTime;
 }

@@ -16,16 +16,13 @@ public class ConnectionManager {
 
     Connection connection;
 
-    public ConnectionManager() {
-        try (
-                Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-        ) {
-            this.connection = connection;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+    public void createConnection() throws SQLException {
+        this.connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
     }
 
+    public void closeConnection() throws SQLException {
+        this.connection.close();
+    }
     public Connection getConnection() {
         return connection;
     }
