@@ -2,8 +2,6 @@ package ru.vsu.cs.sapegin.repository;
 
 import ru.vsu.cs.sapegin.Starter;
 import ru.vsu.cs.sapegin.db.ConnectionManager;
-import ru.vsu.cs.sapegin.dependencies.annotation.Bean;
-import ru.vsu.cs.sapegin.dependencies.annotation.Inject;
 import ru.vsu.cs.sapegin.repository.rep_annotations.ORM_column;
 import ru.vsu.cs.sapegin.repository.rep_annotations.ORM_id;
 import ru.vsu.cs.sapegin.repository.rep_annotations.ORM_table;
