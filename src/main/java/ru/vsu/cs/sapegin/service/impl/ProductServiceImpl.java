@@ -34,12 +34,12 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ProductItem updateProduct(int id, ProductItem updatedProductItem) {
-        return null;
+    public ProductItem updateProduct(int id, ProductItem updatedProductItem) throws IllegalAccessException {
+        return productRepository.updateItem(id, updatedProductItem);
     }
 
     @Override
-    public ProductItem deleteProduct(int id) {
-        return null;
+    public void deleteProduct(int id) {
+        productRepository.deleteById(id);
     }
 }

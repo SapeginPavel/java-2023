@@ -18,13 +18,15 @@ public class App {
         ApplicationContext ap = Starter.applicationContext;
 
         Testing t1 = ap.getBean(Testing.class);
-        t1.testGettingOfDep();
-        t1.testGettingOfProd();
-        t1.testGettingOfDepProd();
+//        t1.testGettingOfDep();
+//        t1.testGettingOfProd();
+//        t1.testGettingOfDepProd();
         System.out.println("---");
         t1.testGettingOfAllProducts();
-        t1.testAddingNewProduct();
+//        t1.testAddingNewProduct();
 
+//        t1.testUpdatingProduct();
+//        t1.testDeleteProduct();
 
 
 

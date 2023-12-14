@@ -50,5 +50,16 @@ public class Testing {
 
     public void testAddingNewProduct() throws Exception {
         System.out.println(productService.addProduct(new ProductItem(-1, "ТЕСТОВОЕ", 501)));
+        System.out.println(productService.addProduct(new ProductItem(-1, "ТЕСТОВОЕ2", 501)));
+    }
+
+    public void testUpdatingProduct() throws IllegalAccessException {
+//        System.out.println(productService.updateProduct(2, new ProductItem(-1, "'; DROP TABLE PRODUCT; --", 501)));
+        System.out.println(productService.updateProduct(2, new ProductItem(-1, "Новое название", 501)));
+    }
+
+    public void testDeleteProduct() {
+        productService.deleteProduct(2);
+        System.out.println("Удалили");
     }
 }

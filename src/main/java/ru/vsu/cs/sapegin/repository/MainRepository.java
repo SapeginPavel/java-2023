@@ -43,10 +43,6 @@ public class MainRepository<ITEM, ID> {
 
     public ITEM findById(ID id) {
         try (
-//            Connection connection = DriverManager.getConnection(
-//                ConnectionManager.DB_URL,
-//                ConnectionManager.DB_USER,
-//                ConnectionManager.DB_PASSWORD);
             Connection connection = connectionManager.getConnection();
             PreparedStatement pStatement = connection.prepareStatement("select * from " + nameOfTable + " where " + nameOfId + " = " + id);
         ) {
@@ -124,18 +120,63 @@ public class MainRepository<ITEM, ID> {
         return null;
     }
 
-//    private List<String> getColumnsNamesWithoutId(ITEM item) {
-//        List<String> names = new CopyOnWriteArrayList<>();
-//        Field[] fields = clazzOfItem.getDeclaredFields();
-//        for (Field field : fields) {
-//            if (field.isAnnotationPresent(ORM_id.class)) {
-//                continue;
-//            };
-//            ORM_column c = field.getAnnotation(ORM_column.class);
-//            names.add(c.column_name());
-//        }
-//        return names;
-//    }
+    public ITEM updateItem(ID id, ITEM updatedItem) throws IllegalAccessException {
+        try(
+                Connection connection = connectionManager.getConnection();
+        ) {
+            List<Field> fieldsForAdd = getFieldsOfItem(updatedItem);
+            StringBuilder query = new StringBuilder();
+            query.append("set ");
+            for (int i = 1; i < fieldsForAdd.size(); i++) {;
+                fieldsForAdd.get(i).setAccessible(true);
+                query.append(fieldsForAdd.get(i).getAnnotation(ORM_column.class).column_name());
+                query.append("=");
+                query.append("'");
+                query.append(String.format("%s", fieldsForAdd.get(i).get(updatedItem)));
+//                query.append(fieldsForAdd.get(i).get(updatedItem));
+                query.append("'");
+                if (i != fieldsForAdd.size() - 1) {
+                    query.append(", ");
+                }
+            }
+            String queryString = query.toString();
+
+            PreparedStatement pStatementUpdate = connection.prepareStatement(
+                    "update " + nameOfTable + " " + queryString + " where " + nameOfId + "=" + id
+            );
+            PreparedStatement pStatementSelect = connection.prepareStatement(
+                    "select * from " + nameOfTable + " where " + nameOfId + " = " + id
+            );
+
+            pStatementUpdate.execute();
+            ResultSet resultSet = pStatementSelect.executeQuery();
+            resultSet.next();
+            return parseTupleIntoItemObject(resultSet);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public void deleteById(ID id) {
+        try(
+            Connection connection = connectionManager.getConnection();
+            PreparedStatement pStatement = connection.prepareStatement(
+                    "delete from " + nameOfTable + " where " + nameOfId + "=" + id
+            );
+        ) {
+            pStatement.execute();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+
+
+
 
     private List<Field> getFieldsOfItem(ITEM item) {
         Field[] declaredFields = clazzOfItem.getDeclaredFields();
