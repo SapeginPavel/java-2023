@@ -8,7 +8,7 @@ import java.util.List;
 public interface ProductService {
     ProductItem getById(int id);
     List<ProductItem> getAll();
-    ProductItem addProduct(ProductItem newProductItem) throws Exception;
+    ProductItem addProduct(ProductItem addedProductItem) throws Exception;
     ProductItem updateProduct(int id, ProductItem updatedProductItem) throws IllegalAccessException;
     void deleteProduct(int id);
 }

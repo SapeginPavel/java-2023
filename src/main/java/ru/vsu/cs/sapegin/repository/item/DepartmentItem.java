@@ -1,5 +1,7 @@
 package ru.vsu.cs.sapegin.repository.item;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 import ru.vsu.cs.sapegin.repository.rep_annotations.ORM_column;
 import ru.vsu.cs.sapegin.repository.rep_annotations.ORM_id;
@@ -9,6 +11,8 @@ import java.sql.Time;
 
 @ORM_table(table_name = "department")
 @ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class DepartmentItem {
 
     @ORM_id

@@ -29,8 +29,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ProductItem addProduct(ProductItem newProductItem) throws Exception {
-        return productRepository.addItem(newProductItem);
+    public ProductItem addProduct(ProductItem addedProductItem) throws Exception {
+        return productRepository.addItem(addedProductItem);
     }
 
     @Override

@@ -1,5 +1,7 @@
 package ru.vsu.cs.sapegin.repository.item;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 import ru.vsu.cs.sapegin.repository.rep_annotations.ORM_column;
 import ru.vsu.cs.sapegin.repository.rep_annotations.ORM_id;
@@ -7,6 +9,8 @@ import ru.vsu.cs.sapegin.repository.rep_annotations.ORM_table;
 
 @ORM_table(table_name = "department_product")
 @ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class DepartmentProductItem {
 
     @ORM_id
