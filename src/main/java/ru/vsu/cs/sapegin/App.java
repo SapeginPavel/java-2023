@@ -1,7 +1,6 @@
 package ru.vsu.cs.sapegin;
 
 import ru.vsu.cs.sapegin.dependencies.ApplicationContext;
-import ru.vsu.cs.sapegin.service.impl.DepartmentServiceImpl;
 
 public class App {
     public static void main( String[] args ) throws Exception {
@@ -15,7 +14,9 @@ public class App {
         ApplicationContext ap = starter.getApplicationContext();
 
         Testing t1 = ap.getBean(Testing.class);
-        t1.testGettingOfData();
+        t1.testGettingOfDep();
+        t1.testGettingOfProd();
+        t1.testGettingOfDepProd();
 
 //        MainRepository<ProductItem, Integer> productRepository = new MainRepository<>(ProductItem.class);
 //        ProductItem productItem = productRepository.findById(2);
