@@ -17,7 +17,6 @@ public class MainRepository<ITEM, ID> {
     //todo: параметризовать классы?
 
     Class<ITEM> clazzOfItem;
-    Class<?> clazzOfId; //todo: правильно ли?
     String nameOfId;
     String nameOfTable;
 
@@ -32,7 +31,6 @@ public class MainRepository<ITEM, ID> {
         Field[] fields = clazzOfItem.getDeclaredFields();
         for (Field field : fields) {
             if (field.isAnnotationPresent(ORM_id.class)) {
-                clazzOfId = field.getType();
                 nameOfId = field.getAnnotation(ORM_column.class).column_name();
             };
         }
@@ -40,13 +38,12 @@ public class MainRepository<ITEM, ID> {
 
     public ITEM findById(ID id) { //todo: попытаться с Object
         try (
-                Connection connection = DriverManager.getConnection(
-                        ConnectionManager.DB_URL,
-                        ConnectionManager.DB_USER,
-                        ConnectionManager.DB_PASSWORD);
-                PreparedStatement pStatement = connection.prepareStatement("select * from " + nameOfTable + " where " + nameOfId + " = " + id);
-                ) {
-
+            Connection connection = DriverManager.getConnection(
+                ConnectionManager.DB_URL,
+                ConnectionManager.DB_USER,
+                ConnectionManager.DB_PASSWORD);
+            PreparedStatement pStatement = connection.prepareStatement("select * from " + nameOfTable + " where " + nameOfId + " = " + id);
+        ) {
             ResultSet resultSet = pStatement.executeQuery();
             resultSet.next();
 
@@ -58,7 +55,6 @@ public class MainRepository<ITEM, ID> {
                 Object value = resultSet.getObject(column_name.column_name(), f.getType());
                 f.set(item, value); //устанавливаем для какого-то объекта item значение value в поле f
             }
-
             return item;
         } catch (Exception e) {
             e.printStackTrace();

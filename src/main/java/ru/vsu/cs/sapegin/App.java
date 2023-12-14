@@ -1,8 +1,6 @@
 package ru.vsu.cs.sapegin;
 
-import ru.vsu.cs.sapegin.service.DepartmentProductServiceImpl;
-import ru.vsu.cs.sapegin.service.DepartmentServiceImpl;
-import ru.vsu.cs.sapegin.service.ProductServiceImpl;
+import ru.vsu.cs.sapegin.service.impl.DepartmentServiceImpl;
 
 public class App 
 {

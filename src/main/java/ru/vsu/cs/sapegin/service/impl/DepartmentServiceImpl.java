@@ -1,7 +1,8 @@
-package ru.vsu.cs.sapegin.service;
+package ru.vsu.cs.sapegin.service.impl;
 
 import ru.vsu.cs.sapegin.repository.item.DepartmentItem;
 import ru.vsu.cs.sapegin.repository.reps.DepartmentRepository;
+import ru.vsu.cs.sapegin.service.DepartmentService;
 
 public class DepartmentServiceImpl implements DepartmentService {
 
