@@ -11,8 +11,8 @@ insert into product(name, cost) values
 ('s#4', '1000'),
 ('s#55', '1500');
 
-create table department_product(dep_id int, prod_id int);
-insert into department_product values
+create table department_product(id int auto_increment primary key not null, dep_id int, prod_id int);
+insert into department_product(dep_id, prod_id) values
 (1, 1),
 (1, 2),
 (2, 3);
