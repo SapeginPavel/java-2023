@@ -8,7 +8,6 @@ import ru.vsu.cs.sapegin.repository.reps.DepartmentRepository;
 import ru.vsu.cs.sapegin.service.DepartmentService;
 
 @Bean
-@Component
 public class DepartmentServiceImpl implements DepartmentService {
 
 //    DepartmentRepository departmentRepository = new DepartmentRepository();

@@ -9,7 +9,6 @@ import ru.vsu.cs.sapegin.service.DepartmentProductService;
 
 import java.sql.SQLException;
 
-@Component
 @Bean
 public class DepartmentProductServiceImpl implements DepartmentProductService {
 

@@ -8,7 +8,6 @@ import ru.vsu.cs.sapegin.repository.MainRepository;
 import java.sql.SQLException;
 
 @Bean
-@Component
 public class ProductRepository extends MainRepository<ProductItem, Integer> {
     public ProductRepository() throws SQLException {
         super(ProductItem.class);

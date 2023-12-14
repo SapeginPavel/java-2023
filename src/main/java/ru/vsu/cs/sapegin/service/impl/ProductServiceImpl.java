@@ -9,7 +9,6 @@ import ru.vsu.cs.sapegin.service.ProductService;
 
 import java.sql.SQLException;
 
-@Component
 @Bean
 public class ProductServiceImpl implements ProductService {
 

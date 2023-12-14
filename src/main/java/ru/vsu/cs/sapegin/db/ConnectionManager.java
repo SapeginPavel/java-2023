@@ -8,7 +8,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-@Component
 @Bean
 public class ConnectionManager {
     public static final String DB_URL = "jdbc:h2:~/shop";
