@@ -9,18 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56b7fe25-bb81-4a9b-8c4d-725c8f33c8f4" name="Changes" comment="created tests">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/servlet/DepartmentServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/departments.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/db/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/db/ConnectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/listener/ServletContextListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/listener/ServletContextListener.java" afterDir="false" />
+    <list default="true" id="56b7fe25-bb81-4a9b-8c4d-725c8f33c8f4" name="Changes" comment="bd connected from servlet">
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/repository/MainRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/repository/MainRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/service/DepartmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/service/DepartmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/servlet/MainServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/servlet/MainServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/servlet/DepartmentServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/servlet/DepartmentServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +187,7 @@
       <option name="presentableId" value="Default" />
       <updated>1702480731094</updated>
       <workItem from="1702480732548" duration="23005000" />
-      <workItem from="1702540138488" duration="33995000" />
+      <workItem from="1702540138488" duration="35274000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1702484534292</created>
@@ -345,7 +336,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702570681712</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="bd connected from servlet">
+      <created>1702632521567</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1702632521567</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -384,6 +382,7 @@
     <MESSAGE value="method add in MainRepository available" />
     <MESSAGE value="methods update and delete in MainRepository are available" />
     <MESSAGE value="created tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="created tests" />
+    <MESSAGE value="bd connected from servlet" />
+    <option name="LAST_COMMIT_MESSAGE" value="bd connected from servlet" />
   </component>
 </project>

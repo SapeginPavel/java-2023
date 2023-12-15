@@ -58,8 +58,6 @@ public class MainRepository<ITEM, ID> {
     }
 
     public List<ITEM> findAll() {
-        System.out.println("Проверка соединения: " + connectionManager);
-        System.out.println(Starter.applicationContext.getAllBeans());
         try(
             Connection connection = connectionManager.getConnection();
             PreparedStatement pStatement = connection.prepareStatement("select * from " + nameOfTable);

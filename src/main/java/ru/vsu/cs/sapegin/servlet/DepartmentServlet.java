@@ -24,20 +24,10 @@ public class DepartmentServlet extends HttpServlet {
         System.out.println("Зашли в инит сервлета");
         try {
             departmentService = Starter.applicationContext.getBean(DepartmentService.class);
-            System.out.println("Класс деп сёрвис: " + departmentService);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-//        try {
-//            System.out.println("Загружаем БД?");
-//            Class.forName("org.h2.Driver");
-//            System.out.println("Загрузили БД?");
-//        } catch (ClassNotFoundException ex) {
-//            ex.printStackTrace();
-//        }
-        System.out.println("Закончили метод init() и вызываем родительский");
         try {
-            System.out.println("Соед: " + Starter.applicationContext.getBean(ConnectionManager.class));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
