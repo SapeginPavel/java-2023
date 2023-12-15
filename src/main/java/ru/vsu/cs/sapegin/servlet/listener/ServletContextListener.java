@@ -1,4 +1,4 @@
-package ru.vsu.cs.sapegin.listener;
+package ru.vsu.cs.sapegin.servlet.listener;
 
 import ru.vsu.cs.sapegin.Starter;
 import ru.vsu.cs.sapegin.db.ConnectionManager;
