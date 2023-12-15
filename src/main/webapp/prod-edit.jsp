@@ -16,8 +16,8 @@
         <label>Название</label>
         <input name="name" value="<%=product.getName()%>"><br><br>
         <label>Стоимость</label>
-        <input name="open_time" value="<%=product.getCost()%>"><br><br>
-        <label>Время закрытия</label>
+        <input name="cost" value="<%=product.getCost()%>"><br><br>
+        <input type="submit" value="Сохранить">
     </form>
     <form method="post" action="<%=product.getId()%>">
         <input name="delete" hidden>
