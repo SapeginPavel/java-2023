@@ -20,6 +20,8 @@ public class MainRepository<ITEM, ID> {
 
     protected ConnectionManager connectionManager = Starter.applicationContext.getBean(ConnectionManager.class);
 
+    Cache<ID, ITEM> repositoryCache;
+
     //todo: параметризовать классы?
 
     protected Class<ITEM> clazzOfItem;
@@ -28,6 +30,7 @@ public class MainRepository<ITEM, ID> {
 
     public MainRepository(Class<ITEM> clazzOfItem) throws Exception {
         this.clazzOfItem = clazzOfItem;
+        repositoryCache = new Cache<>();
         handleItemClass();
     }
 
@@ -44,6 +47,10 @@ public class MainRepository<ITEM, ID> {
     }
 
     public ITEM findById(ID id) {
+        ITEM fromCache = repositoryCache.getObj(id);
+        if (fromCache != null) {
+            return fromCache;
+        }
         try (
             Connection connection = connectionManager.getConnection();
             PreparedStatement pStatement = connection.prepareStatement("select * from " + nameOfTable + " where " + nameOfId + " = " + id);
@@ -52,8 +59,12 @@ public class MainRepository<ITEM, ID> {
             ResultSet resultSet = pStatement.executeQuery();
             resultSet.next();
 
+            ITEM fromDB = parseTupleIntoItemObject(resultSet);
+
+            repositoryCache.pushObj(id, fromDB); //можно было бы там внутри перебрать все поля и искать Id, но пока так ничего не мешает сделать
+
 //            connection.close();
-            return parseTupleIntoItemObject(resultSet);
+            return fromDB;
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -182,8 +193,6 @@ public class MainRepository<ITEM, ID> {
         }
     }
 
-
-
     public <T> List<ITEM> getByColumnName(List<String> requiredColumns, String columnName, T comparable) {
         StringBuilder requiredColumnsAsSB = new StringBuilder();
         if (requiredColumns == null) {
@@ -214,12 +223,6 @@ public class MainRepository<ITEM, ID> {
         }
     }
 
-
-
-
-
-
-
     private List<Field> getFieldsOfItem(ITEM item) {
         Field[] declaredFields = clazzOfItem.getDeclaredFields();
         List<Field> fields = new CopyOnWriteArrayList<>(Arrays.stream(declaredFields).toList());
@@ -231,6 +234,7 @@ public class MainRepository<ITEM, ID> {
         }
         return fields;
     }
+
 
     protected ITEM parseTupleIntoItemObject(ResultSet resultSet) throws SQLException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, InstantiationException {
         ITEM item = clazzOfItem.getDeclaredConstructor().newInstance();
