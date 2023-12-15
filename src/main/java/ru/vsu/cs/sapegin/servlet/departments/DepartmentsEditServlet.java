@@ -33,7 +33,7 @@ public class DepartmentsEditServlet extends HttpServlet {
         int id = Integer.parseInt(pathInfo.substring(1));
         DepartmentItem departmentItem = departmentService.getById(id);
         req.setAttribute("dep", departmentItem);
-        req.getRequestDispatcher("/edit-dep.jsp").forward(req, resp);
+        req.getRequestDispatcher("/dep-edit.jsp").forward(req, resp);
     }
 
     @Override

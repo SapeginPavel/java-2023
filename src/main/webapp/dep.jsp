@@ -8,9 +8,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%DepartmentItem departmentItem = (DepartmentItem) request.getAttribute("dep");%>
 <html>
 <head>
-    <%DepartmentItem departmentItem = (DepartmentItem) request.getAttribute("dep");%>
     <title><%=departmentItem.getName()%></title>
 </head>
 <body>
@@ -23,7 +23,7 @@
     <a href="/departments">Назад</a>
 
     <div style="margin-top: 55px;">
-        <h4>Продукты отдела:</h4>
+        <h4>Товары отдела:</h4>
         <% List<ProductItem> products = (List<ProductItem>) request.getAttribute("prods"); %>
         <div>
             <% for (ProductItem p : products) { %>

@@ -9,7 +9,7 @@
 <% DepartmentItem department = (DepartmentItem) request.getAttribute("dep"); %>
 <html>
 <head>
-    <title>Редактирование</title>
+    <title>Редактирование отдела</title>
 </head>
 <body>
     <form method="post" action="<%=department.getId()%>">

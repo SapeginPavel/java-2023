@@ -29,21 +29,19 @@ public class DepartmentAddServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/add-dep.jsp").forward(req, resp);
+        req.getRequestDispatcher("/dep-add.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
         try {
-            System.out.println("Зашли");
             departmentService.addDepartment(new DepartmentItem(
                                                 -1,
                                                 req.getParameter("name"),
                                                 Time.valueOf(req.getParameter("open_time")),
                                                 Time.valueOf(req.getParameter("close_time"))
                                             ));
-            System.out.println("Добавили");
             resp.sendRedirect("http://localhost:8070/departments");
         } catch (Exception e) {
             throw new RuntimeException(e);

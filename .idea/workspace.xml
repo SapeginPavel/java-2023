@@ -9,16 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56b7fe25-bb81-4a9b-8c4d-725c8f33c8f4" name="Changes" comment="updating of departments works">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/servlet/DepartmentAddServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/add-dep.jsp" afterDir="false" />
+    <list default="true" id="56b7fe25-bb81-4a9b-8c4d-725c8f33c8f4" name="Changes" comment="some changes">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/servlet/products/ProductsServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/prod.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/products.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/listener/ServletContextListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/listener/ServletContextListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/servlet/DepartmentsEditServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/servlet/DepartmentsEditServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/servlet/departments/DepartmentAddServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/servlet/departments/DepartmentAddServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/servlet/departments/DepartmentsEditServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/servlet/departments/DepartmentsEditServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/add-dep.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dep-add.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/dep.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dep.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/departments.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/departments.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/edit-dep.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/edit-dep.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/edit-dep.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dep-edit.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +74,8 @@
       <recent name="ru.vsu.cs.sapegin.service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\IdeaProjects\java-2023\src\main\webapp\products" />
+      <recent name="C:\Users\user\IdeaProjects\java-2023\src\main\webapp\department" />
       <recent name="C:\Users\user\IdeaProjects\java-2023\src\main\webapp" />
     </key>
   </component>
@@ -383,7 +386,21 @@
       <option name="project" value="LOCAL" />
       <updated>1702674098287</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="all operations work for departments">
+      <created>1702676528713</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1702676528713</updated>
+    </task>
+    <task id="LOCAL-00028" summary="some changes">
+      <created>1702676660248</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1702676660248</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -401,7 +418,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="initial commit" />
     <MESSAGE value="changed root address" />
     <MESSAGE value="added old project (DI-container)" />
     <MESSAGE value="it works a little" />
@@ -422,10 +438,11 @@
     <MESSAGE value="methods update and delete in MainRepository are available" />
     <MESSAGE value="created tests" />
     <MESSAGE value="bd connected from servlet" />
-    <MESSAGE value="some changes" />
     <MESSAGE value="it works (but without pages for separate id)" />
     <MESSAGE value="it works with pages for separate id and some other changes" />
     <MESSAGE value="updating of departments works" />
-    <option name="LAST_COMMIT_MESSAGE" value="updating of departments works" />
+    <MESSAGE value="all operations work for departments" />
+    <MESSAGE value="some changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="some changes" />
   </component>
 </project>
