@@ -2,6 +2,7 @@ package ru.vsu.cs.sapegin.repository;
 
 import ru.vsu.cs.sapegin.Starter;
 import ru.vsu.cs.sapegin.db.ConnectionManager;
+import ru.vsu.cs.sapegin.repository.item.DepartmentProductItem;
 import ru.vsu.cs.sapegin.repository.rep_annotations.ORM_column;
 import ru.vsu.cs.sapegin.repository.rep_annotations.ORM_id;
 import ru.vsu.cs.sapegin.repository.rep_annotations.ORM_table;
@@ -12,6 +13,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class MainRepository<ITEM, ID> {
@@ -174,9 +176,33 @@ public class MainRepository<ITEM, ID> {
 
 
 
-    protected <T> List<ITEM> getByColumnName(String columnName, T comparable) {
-        //todo
-        return null;
+    public <T> List<ITEM> getByColumnName(List<String> requiredColumns, String columnName, T comparable) {
+        StringBuilder requiredColumnsAsSB = new StringBuilder();
+        if (requiredColumns == null) {
+            requiredColumnsAsSB.append(" * ");
+        } else {
+            for (int i = 0; i < requiredColumns.size(); i++) {
+                requiredColumnsAsSB.append(requiredColumns.get(i));
+                if (i != requiredColumns.size() - 1) {
+                    requiredColumnsAsSB.append(", ");
+                }
+            }
+        }
+        String requiredColumnsAsStr = requiredColumnsAsSB.toString();
+        try( //верно же, что не надо ресурсы закрывать?
+             Connection connection = connectionManager.getConnection();
+             //todo: проверить, работает ли на строках
+             PreparedStatement ps = connection.prepareStatement("select " + requiredColumnsAsStr + " from " + nameOfTable + " where " + columnName + "=" + "'" + comparable + "'");
+        ) {
+            ResultSet rs = ps.executeQuery();
+            List<ITEM> items = new CopyOnWriteArrayList<>();
+            while (rs.next()) {
+                items.add(parseTupleIntoItemObject(rs));
+            }
+            return items;
+        } catch (SQLException | InvocationTargetException | NoSuchMethodException | IllegalAccessException | InstantiationException e) {
+            throw new RuntimeException("Ошибка в " + this.getClass() + e);
+        }
     }
 
 
@@ -203,9 +229,24 @@ public class MainRepository<ITEM, ID> {
         for (Field f : fields) {
             f.setAccessible(true); //установка доступа к приватным полям
             ORM_column column_name = f.getAnnotation(ORM_column.class);
-            Object value = resultSet.getObject(column_name.column_name(), f.getType());
-            f.set(item, value); //устанавливаем для какого-то объекта item значение value в поле f
+            if (isExist(resultSet, column_name.column_name())) {
+                Object value = resultSet.getObject(column_name.column_name(), f.getType());
+                f.set(item, value); //устанавливаем для какого-то объекта item значение value в поле f
+            }
         }
         return item;
+    }
+
+    private static boolean isExist(ResultSet resultSet, String columnName) throws SQLException {
+        if (columnName == null || (columnName = columnName.trim()).isEmpty())
+            return false;
+
+        ResultSetMetaData metaData = resultSet.getMetaData();
+        for (int i = 1; i <= metaData.getColumnCount(); i++) {
+            if (columnName.toLowerCase(Locale.ROOT).equals(metaData.getColumnName(i).toLowerCase(Locale.ROOT))) {
+                return true;
+            }
+        }
+        return false;
     }
 }

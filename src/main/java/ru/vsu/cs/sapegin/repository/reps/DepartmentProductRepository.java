@@ -22,19 +22,19 @@ public class DepartmentProductRepository extends MainRepository<DepartmentProduc
         super(DepartmentProductItem.class);
     }
 
-    public List<DepartmentProductItem> getAllProductsForDepartmentId(int id) {
-        try( //верно же, что не надо ресурсы закрывать?
-                Connection connection = connectionManager.getConnection();
-                PreparedStatement ps = connection.prepareStatement("select * from " + nameOfTable + " where dep_id = " + id);
-        ) {
-            ResultSet rs = ps.executeQuery();
-            List<DepartmentProductItem> items = new CopyOnWriteArrayList<>();
-            while (rs.next()) {
-                items.add(parseTupleIntoItemObject(rs));
-            }
-            return items;
-        } catch (SQLException | InvocationTargetException | NoSuchMethodException | IllegalAccessException | InstantiationException e) {
-            throw new RuntimeException("Не удалось получить подключение в " + this.getClass() + e);
-        }
-    }
+//    public List<DepartmentProductItem> getAllProductsForDepartmentId(int id) {
+//        try( //верно же, что не надо ресурсы закрывать?
+//                Connection connection = connectionManager.getConnection();
+//                PreparedStatement ps = connection.prepareStatement("select * from " + nameOfTable + " where dep_id = " + id);
+//        ) {
+//            ResultSet rs = ps.executeQuery();
+//            List<DepartmentProductItem> items = new CopyOnWriteArrayList<>();
+//            while (rs.next()) {
+//                items.add(parseTupleIntoItemObject(rs));
+//            }
+//            return items;
+//        } catch (SQLException | InvocationTargetException | NoSuchMethodException | IllegalAccessException | InstantiationException e) {
+//            throw new RuntimeException("Не удалось получить подключение в " + this.getClass() + e);
+//        }
+//    }
 }

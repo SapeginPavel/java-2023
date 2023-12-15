@@ -39,4 +39,9 @@ public class DepartmentProductServiceImpl implements DepartmentProductService {
     public void deleteDepartmentProduct(int id) {
         departmentProductRepository.deleteById(id);
     }
+
+    @Override
+    public List<DepartmentProductItem> getProductsWithDepId(int id) {
+        return departmentProductRepository.getByColumnName(List.of("prod_id"), "dep_id", id);
+    }
 }

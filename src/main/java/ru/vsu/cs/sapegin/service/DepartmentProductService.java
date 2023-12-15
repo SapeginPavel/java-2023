@@ -10,4 +10,6 @@ public interface DepartmentProductService {
     DepartmentProductItem addDepartmentProduct(DepartmentProductItem addedDepProdItem) throws Exception;
     DepartmentProductItem updateDepartmentProduct(int id, DepartmentProductItem updatedDepProdItem) throws IllegalAccessException;
     void deleteDepartmentProduct(int id);
+
+    List<DepartmentProductItem> getProductsWithDepId(int id);
 }

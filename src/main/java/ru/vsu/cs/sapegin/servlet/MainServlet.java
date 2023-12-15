@@ -18,7 +18,6 @@ public class MainServlet extends HttpServlet {
         pw.println("<h1>Hello</h1>");
         pw.println("</html>");
 
-        System.out.println("Привет начало");
 
 //        Integer g = 5;
 //        System.out.println(g);
@@ -29,7 +28,6 @@ public class MainServlet extends HttpServlet {
 //        System.out.println(productItem);
 
 
-        System.out.println("Привет конец!");
     }
 
     @Override
