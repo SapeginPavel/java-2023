@@ -32,6 +32,7 @@ public class Cache <T, Y> {
 
     public Y getObj(T id) {
         if (cache.containsKey(id)) {
+            System.out.println("Забираем объект из кеша!");
             return cache.get(id);
         }
         return null;

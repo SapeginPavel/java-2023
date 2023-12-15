@@ -25,6 +25,7 @@ public class MainRepository<ITEM, ID> {
     //todo: параметризовать классы?
 
     protected Class<ITEM> clazzOfItem;
+    protected Class<ID> clazzOfIdField;
     protected String nameOfId;
     protected String nameOfTable;
 
@@ -41,6 +42,7 @@ public class MainRepository<ITEM, ID> {
         for (Field field : fields) {
             if (field.isAnnotationPresent(ORM_id.class)) {
                 nameOfId = field.getAnnotation(ORM_column.class).column_name();
+                clazzOfIdField = (Class<ID>) field.getType();
                 break;
             };
         }
@@ -121,7 +123,8 @@ public class MainRepository<ITEM, ID> {
             );
             ResultSet idRS = pStatementSelectId.executeQuery();
             idRS.next();
-            int last_id = idRS.getInt(1);
+//            int last_id = idRS.getInt(1);
+            ID last_id = idRS.getObject(1, clazzOfIdField);
 
             PreparedStatement pStatementSelect = connection.prepareStatement(
                     "select * from " + nameOfTable + " where " + nameOfId + " = " + last_id
@@ -130,8 +133,11 @@ public class MainRepository<ITEM, ID> {
             ResultSet resultSet = pStatementSelect.executeQuery();
             resultSet.next();
 
+            ITEM fromDB = parseTupleIntoItemObject(resultSet);
+            repositoryCache.pushObj(last_id, fromDB);
+
 //            connection.close();
-            return parseTupleIntoItemObject(resultSet);
+            return fromDB;
 
         } catch (Exception e) {
             e.printStackTrace();
