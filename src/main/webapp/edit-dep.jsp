@@ -21,5 +21,11 @@
         <input name="close_time" value="<%=department.getCloseTime()%>"><br><br>
         <input type="submit" value="Сохранить">
     </form>
+    <form method="post" action="<%=department.getId()%>">
+        <input name="delete" hidden>
+        <input type="submit" value="Удалить отдел">
+    </form>
+    <br>
+    <a href="/departments/<%=department.getId()%>">Назад</a>
 </body>
 </html>

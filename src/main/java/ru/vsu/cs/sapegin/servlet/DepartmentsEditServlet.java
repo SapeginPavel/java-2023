@@ -40,15 +40,27 @@ public class DepartmentsEditServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
         int id = Integer.parseInt(req.getPathInfo().substring(1));
-//        System.out.println(req.getParameter("name"));
-        String name = req.getParameter("name");
-        Time open = Time.valueOf(req.getParameter("open_time"));
-        Time close = Time.valueOf(req.getParameter("close_time"));
-        try {
-            departmentService.updateDepartment(id, new DepartmentItem(-1, name, open, close));
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
+        if (req.getParameter("delete") != null) {
+            System.out.println("Зашли в удаление");
+            departmentService.deleteDepartment(id);
+            System.out.println("Удалили");
+            resp.sendRedirect("http://localhost:8070/departments");
+        } else {
+            try {
+                departmentService.updateDepartment(id, getDepartmentItemFromReq(req));
+                resp.sendRedirect("http://localhost:8070/departments/" + id);
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException(e);
+            }
         }
-        resp.sendRedirect("http://localhost:8070/departments/" + id);
+    }
+
+    private DepartmentItem getDepartmentItemFromReq(HttpServletRequest req) {
+        return new DepartmentItem(
+                0,
+                req.getParameter("name"),
+                Time.valueOf(req.getParameter("open_time")),
+                Time.valueOf(req.getParameter("close_time")
+            ));
     }
 }

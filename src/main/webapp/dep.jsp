@@ -20,6 +20,8 @@
         <div><%="Время работы: " + departmentItem.getOpenTime() + " - " + departmentItem.getCloseTime()%></div>
     </div>
     <a href="<%=departmentItem.getId()%>/edit">Изменить</a>
+    <a href="/departments">Назад</a>
+
     <div style="margin-top: 55px;">
         <h4>Продукты отдела:</h4>
         <% List<ProductItem> products = (List<ProductItem>) request.getAttribute("prods"); %>

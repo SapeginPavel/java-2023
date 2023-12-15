@@ -25,7 +25,6 @@ public class ServletContextListener implements javax.servlet.ServletContextListe
                 throw new RuntimeException(ex);
             }
         }
-        System.out.println("Прошла инициализация");
     }
 
     @Override
