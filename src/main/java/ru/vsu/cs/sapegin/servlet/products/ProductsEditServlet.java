@@ -1,4 +1,8 @@
 package ru.vsu.cs.sapegin.servlet.products;
 
-public class ProductsEditServlet {
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServlet("/prod/edit")
+public class ProductsEditServlet extends HttpServlet {
 }

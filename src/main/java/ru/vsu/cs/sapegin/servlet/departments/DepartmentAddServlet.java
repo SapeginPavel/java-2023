@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Time;
 
-@WebServlet("/dep/create")
+@WebServlet("/dep/add")
 public class DepartmentAddServlet extends HttpServlet {
 
     DepartmentService departmentService;

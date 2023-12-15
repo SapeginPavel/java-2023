@@ -1,4 +1,8 @@
 package ru.vsu.cs.sapegin.servlet.products;
 
-public class ProductAddServlet {
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServlet("/prod/add")
+public class ProductAddServlet extends HttpServlet {
 }

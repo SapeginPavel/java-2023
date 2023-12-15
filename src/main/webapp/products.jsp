@@ -15,7 +15,7 @@
 <body style="margin-left: 15px">
     <% if (products != null) { %>
     <a href="/">На главную</a>
-    <a href="/dep/create">Создать товар</a>
+    <a href="/prod/add">Создать товар</a>
     <h1>Список товаров магазина:</h1>
     <div>
         <% for (ProductItem productItem : products) { %>

@@ -23,7 +23,7 @@
 <body style="margin-left: 15px">
 <% if (departments != null) { %>
 <a href="/">На главную</a>
-<a href="/dep/create">Создать отдел</a>
+<a href="/dep/add">Создать отдел</a>
 <h1>Список отделов магазина:</h1>
 <div>
     <% for (DepartmentItem departmentItem : departments) { %>
