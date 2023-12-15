@@ -12,6 +12,15 @@
     <title><%=departmentItem.getName()%></title>
 </head>
 <body>
-  <h1>Ну привет</h1>
+    <h2 style="margin-left: 20px"><%=departmentItem.getName()%></h2>
+    <div>
+        <p><%="ID: " + departmentItem.getId()%></p>
+        <p><%="Время работы: " + departmentItem.getOpenTime() + " - " + departmentItem.getCloseTime()%></p>
+    </div>
+    <div style="margin-top: 30px;">
+        <div>
+
+        </div>
+    </div>
 </body>
 </html>

@@ -16,13 +16,13 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class MainRepository<ITEM, ID> {
 
-    private ConnectionManager connectionManager = Starter.applicationContext.getBean(ConnectionManager.class);
+    protected ConnectionManager connectionManager = Starter.applicationContext.getBean(ConnectionManager.class);
 
     //todo: параметризовать классы?
 
-    Class<ITEM> clazzOfItem;
-    String nameOfId;
-    String nameOfTable;
+    protected Class<ITEM> clazzOfItem;
+    protected String nameOfId;
+    protected String nameOfTable;
 
     public MainRepository(Class<ITEM> clazzOfItem) throws Exception {
         this.clazzOfItem = clazzOfItem;
@@ -174,6 +174,13 @@ public class MainRepository<ITEM, ID> {
 
 
 
+    protected <T> List<ITEM> getByColumnName(String columnName, T comparable) {
+        //todo
+        return null;
+    }
+
+
+
 
 
 
@@ -190,7 +197,7 @@ public class MainRepository<ITEM, ID> {
         return fields;
     }
 
-    private ITEM parseTupleIntoItemObject(ResultSet resultSet) throws SQLException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, InstantiationException {
+    protected ITEM parseTupleIntoItemObject(ResultSet resultSet) throws SQLException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, InstantiationException {
         ITEM item = clazzOfItem.getDeclaredConstructor().newInstance();
         Field[] fields = item.getClass().getDeclaredFields();
         for (Field f : fields) {

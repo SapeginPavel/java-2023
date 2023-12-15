@@ -9,15 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56b7fe25-bb81-4a9b-8c4d-725c8f33c8f4" name="Changes" comment="some changes">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/servlet/DepServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/dep.jsp" afterDir="false" />
+    <list default="true" id="56b7fe25-bb81-4a9b-8c4d-725c8f33c8f4" name="Changes" comment="it works (but without pages for separate id)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/listener/ServletContextListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/listener/ServletContextListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/repository/item/DepartmentItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/repository/item/DepartmentItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/servlet/DepartmentServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/servlet/DepartmentsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/servlet/DepartmentsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/sapegin/servlet/DepartmentsServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/departments.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/departments.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +188,7 @@
       <option name="presentableId" value="Default" />
       <updated>1702480731094</updated>
       <workItem from="1702480732548" duration="23005000" />
-      <workItem from="1702540138488" duration="38513000" />
+      <workItem from="1702540138488" duration="41227000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1702484534292</created>
@@ -356,7 +351,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702633772635</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="it works (but without pages for separate id)">
+      <created>1702637448484</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1702637448484</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -396,6 +398,7 @@
     <MESSAGE value="created tests" />
     <MESSAGE value="bd connected from servlet" />
     <MESSAGE value="some changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="some changes" />
+    <MESSAGE value="it works (but without pages for separate id)" />
+    <option name="LAST_COMMIT_MESSAGE" value="it works (but without pages for separate id)" />
   </component>
 </project>

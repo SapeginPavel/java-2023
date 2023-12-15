@@ -12,14 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-//@WebServlet("/departments")
+@WebServlet("/departments/*")
 public class DepartmentsServlet extends HttpServlet {
 
     DepartmentService departmentService;
 
     @Override
     public void init() throws ServletException {
-        System.out.println("Зашли в инит сервлета");
         try {
             departmentService = Starter.applicationContext.getBean(DepartmentService.class);
         } catch (Exception e) {
@@ -35,13 +34,11 @@ public class DepartmentsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String pathInfo = req.getPathInfo();
-        System.out.println("Путь: " + pathInfo);
         if (pathInfo == null) {
             List<DepartmentItem> departments = departmentService.getAll();
             req.setAttribute("deps", departments);
             req.getRequestDispatcher("/departments.jsp").forward(req, resp);
         } else {
-//            int id = Integer.parseInt(pathInfo);
             int id = Integer.parseInt(pathInfo.substring(1));
             DepartmentItem departmentItem = departmentService.getById(id);
             req.setAttribute("dep", departmentItem);
