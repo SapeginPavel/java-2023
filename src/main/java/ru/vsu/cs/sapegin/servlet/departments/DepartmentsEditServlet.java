@@ -41,9 +41,7 @@ public class DepartmentsEditServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         int id = Integer.parseInt(req.getPathInfo().substring(1));
         if (req.getParameter("delete") != null) {
-            System.out.println("Зашли в удаление");
             departmentService.deleteDepartment(id);
-            System.out.println("Удалили");
             resp.sendRedirect("http://localhost:8070/departments");
         } else {
             try {
