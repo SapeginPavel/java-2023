@@ -19,6 +19,5 @@ public class App {
         t.testAdding();
         t.testUpdating();
         t.testGetAll();
-
     }
 }

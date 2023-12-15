@@ -20,32 +20,36 @@ import java.util.List;
 @WebListener
 public class ServletContextListener implements javax.servlet.ServletContextListener {
 
-
-
-    @Inject
-    ConnectionManager connectionManager;
+    ApplicationContext applicationContext;
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-
-
-
-//        Starter starter = new Starter();
+        Starter starter = new Starter();
+        applicationContext = Starter.applicationContext;
+        try {
+            starter.initializeAll();
+        } catch (Exception e) {
+            try {
+                throw new Exception("Не удалось проинициализировать бины");
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+        System.out.println("Прошла инициализация");
 //        try {
-//            starter.start();
+//            applicationContext.getBean(ConnectionManager.class);
+////            System.out.println("Подключение внутри стартера: " + applicationContext.getBean(ConnectionManager.class));
 //        } catch (Exception e) {
-//            throw new RuntimeException(e);
+//            throw new RuntimeException("Ошибка при выводе бина ConnectionManager");
 //        }
     }
-
-    //todo: в другом классе делать всю эту установку зависимостей
-
 
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
         try {
+            ConnectionManager connectionManager = applicationContext.getBean(ConnectionManager.class);
             connectionManager.closeConnection();
-        } catch (SQLException e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }

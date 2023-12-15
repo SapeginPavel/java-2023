@@ -14,4 +14,15 @@
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>
 
+
+    <servlet>
+        <servlet-name>departments</servlet-name>
+        <servlet-class>ru.vsu.cs.sapegin.servlet.DepartmentServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>departments</servlet-name>
+        <url-pattern>/departments</url-pattern>
+    </servlet-mapping>
+
 </web-app>

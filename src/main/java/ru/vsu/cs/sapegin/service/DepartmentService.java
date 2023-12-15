@@ -1,5 +1,6 @@
 package ru.vsu.cs.sapegin.service;
 
+import ru.vsu.cs.sapegin.dependencies.annotation.Component;
 import ru.vsu.cs.sapegin.repository.item.DepartmentItem;
 
 import java.util.List;
