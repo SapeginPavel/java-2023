@@ -17,12 +17,21 @@
 
     <servlet>
         <servlet-name>departments</servlet-name>
-        <servlet-class>ru.vsu.cs.sapegin.servlet.DepartmentServlet</servlet-class>
+        <servlet-class>ru.vsu.cs.sapegin.servlet.DepartmentsServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>departments</servlet-name>
-        <url-pattern>/departments</url-pattern>
+        <url-pattern>"/departments"</url-pattern>
     </servlet-mapping>
+
+
+<!--    <servlet>-->
+<!--        <servlet-name>dep</servlet-name>-->
+<!--        <servlet-class>ru.vsu.cs.sapegin.servlet.DepServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>dep</servlet-name>-->
+<!--        <url-pattern>/department/id</url-pattern>-->
+<!--    </servlet-mapping>-->
 
 </web-app>

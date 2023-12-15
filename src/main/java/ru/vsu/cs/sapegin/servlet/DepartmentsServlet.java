@@ -1,21 +1,19 @@
 package ru.vsu.cs.sapegin.servlet;
 
 import ru.vsu.cs.sapegin.Starter;
-import ru.vsu.cs.sapegin.db.ConnectionManager;
-import ru.vsu.cs.sapegin.dependencies.annotation.Component;
-import ru.vsu.cs.sapegin.dependencies.annotation.Inject;
 import ru.vsu.cs.sapegin.repository.item.DepartmentItem;
 import ru.vsu.cs.sapegin.service.DepartmentService;
-import ru.vsu.cs.sapegin.service.impl.DepartmentServiceImpl;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-public class DepartmentServlet extends HttpServlet {
+//@WebServlet("/departments")
+public class DepartmentsServlet extends HttpServlet {
 
     DepartmentService departmentService;
 
@@ -36,9 +34,19 @@ public class DepartmentServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<DepartmentItem> departments = departmentService.getAll();
-        req.setAttribute("deps", departments);
-        req.getRequestDispatcher("/departments.jsp").forward(req, resp);
+        String pathInfo = req.getPathInfo();
+        System.out.println("Путь: " + pathInfo);
+        if (pathInfo == null) {
+            List<DepartmentItem> departments = departmentService.getAll();
+            req.setAttribute("deps", departments);
+            req.getRequestDispatcher("/departments.jsp").forward(req, resp);
+        } else {
+//            int id = Integer.parseInt(pathInfo);
+            int id = Integer.parseInt(pathInfo.substring(1));
+            DepartmentItem departmentItem = departmentService.getById(id);
+            req.setAttribute("dep", departmentItem);
+            req.getRequestDispatcher("/dep.jsp").forward(req, resp);
+        }
     }
 
     @Override

@@ -20,13 +20,21 @@
     List<DepartmentItem> departments = (List<DepartmentItem>) request.getAttribute("deps");
 %>
 
-<body>
+<body style="margin-left: 15px">
 <% if (departments != null) { %>
-<ul>
+<h1>Список отделов магазина:</h1>
+<div>
     <% for (DepartmentItem departmentItem : departments) { %>
-    <li><%= departmentItem.toString() %></li>
+    <div>
+        <div><%= "ID: " + departmentItem.getId() %></div>
+        <div><%= "Название: " + departmentItem.getName() %></div>
+        <div><%= "Время работы: " + departmentItem.getOpenTime() + " - " + departmentItem.getCloseTime()%></div>
+        <a href="/departments/<%=departmentItem.getId()%>">Перейти в отдел</a>
+    </div>
+    <p></p>
     <% } %>
-</ul>
+</div>
+
 <% } %>
 </body>
 </html>
