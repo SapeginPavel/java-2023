@@ -12,21 +12,13 @@ public class MainServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        PrintWriter pw = resp.getWriter();
+        req.getRequestDispatcher("/index.jsp").forward(req, resp);
 
-        pw.println("<html>");
-        pw.println("<h1>Hello</h1>");
-        pw.println("</html>");
-
-
-//        Integer g = 5;
-//        System.out.println(g);
-
-//        MainRepository<ProductItem, Integer> productRepository = new MainRepository<>(ProductItem.class);
-//        System.out.println("Создали Мэйн репозитори");
-//        ProductItem productItem = productRepository.findById(1);
-//        System.out.println(productItem);
-
+//        PrintWriter pw = resp.getWriter();
+//
+//        pw.println("<html>");
+//        pw.println("<h2>Главная страница магазина</h2>");
+//        pw.println("</html>");
 
     }
 

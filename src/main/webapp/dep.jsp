@@ -1,4 +1,6 @@
-<%@ page import="ru.vsu.cs.sapegin.repository.item.DepartmentItem" %><%--
+<%@ page import="ru.vsu.cs.sapegin.repository.item.DepartmentItem" %>
+<%@ page import="java.util.List" %>
+<%@ page import="ru.vsu.cs.sapegin.repository.item.ProductItem" %><%--
   Created by IntelliJ IDEA.
   User: user
   Date: 15.12.2023
@@ -12,14 +14,23 @@
     <title><%=departmentItem.getName()%></title>
 </head>
 <body>
-    <h2 style="margin-left: 20px"><%=departmentItem.getName()%></h2>
-    <div>
-        <p><%="ID: " + departmentItem.getId()%></p>
-        <p><%="Время работы: " + departmentItem.getOpenTime() + " - " + departmentItem.getCloseTime()%></p>
+    <h2><%=departmentItem.getName()%></h2>
+    <div style="margin-bottom: 10px">
+        <div><%="ID: " + departmentItem.getId()%></div>
+        <div><%="Время работы: " + departmentItem.getOpenTime() + " - " + departmentItem.getCloseTime()%></div>
     </div>
-    <div style="margin-top: 30px;">
+    <a href="<%=departmentItem.getId()%>/edit">Изменить</a>
+    <div style="margin-top: 55px;">
+        <h4>Продукты отдела:</h4>
+        <% List<ProductItem> products = (List<ProductItem>) request.getAttribute("prods"); %>
         <div>
-
+            <% for (ProductItem p : products) { %>
+            <div style="margin-top: 20px">
+                <div><%= "id: " + p.getId() %></div>
+                <div><%= "Название: " + p.getName() %></div>
+                <div><%= "Стоимость: " + p.getCost() %></div>
+            </div>
+            <% } %>
         </div>
     </div>
 </body>

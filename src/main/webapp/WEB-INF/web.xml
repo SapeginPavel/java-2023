@@ -19,15 +19,25 @@
 <!--        <servlet-name>departments</servlet-name>-->
 <!--        <servlet-class>ru.vsu.cs.sapegin.servlet.DepartmentsServlet</servlet-class>-->
 <!--    </servlet>-->
+<!--    <servlet>-->
+<!--        <servlet-name>departmentsEdit</servlet-name>-->
+<!--        <servlet-class>ru.vsu.cs.sapegin.servlet.DepartmentsEditServlet</servlet-class>-->
+<!--    </servlet>-->
+
+
 <!--    <servlet-mapping>-->
 <!--        <servlet-name>departments</servlet-name>-->
-<!--        <url-pattern>/departments</url-pattern>-->
+<!--        <url-pattern>/departments/*</url-pattern>-->
+<!--    </servlet-mapping>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>departmentsEdit</servlet-name>-->
+<!--        <url-pattern>/departments/*/edit</url-pattern>-->
 <!--    </servlet-mapping>-->
 
 
 <!--    <servlet>-->
 <!--        <servlet-name>dep</servlet-name>-->
-<!--        <servlet-class>ru.vsu.cs.sapegin.servlet.DepServlet</servlet-class>-->
+<!--        <servlet-class>ru.vsu.cs.sapegin.servlet.DepartmentsEditServlet</servlet-class>-->
 <!--    </servlet>-->
 <!--    <servlet-mapping>-->
 <!--        <servlet-name>dep</servlet-name>-->

@@ -1,6 +1,7 @@
 package ru.vsu.cs.sapegin.repository.item;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import ru.vsu.cs.sapegin.repository.rep_annotations.ORM_column;
@@ -11,6 +12,7 @@ import ru.vsu.cs.sapegin.repository.rep_annotations.ORM_table;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
 public class ProductItem {
 
     @ORM_id

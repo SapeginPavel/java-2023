@@ -51,6 +51,8 @@ public class MainRepository<ITEM, ID> {
 
             ResultSet resultSet = pStatement.executeQuery();
             resultSet.next();
+
+//            connection.close();
             return parseTupleIntoItemObject(resultSet);
 
         } catch (Exception e) {
@@ -69,6 +71,8 @@ public class MainRepository<ITEM, ID> {
             while (resultSet.next()) {
                 items.add(parseTupleIntoItemObject(resultSet));
             }
+
+//            connection.close();
             return items;
 
         } catch (Exception e) {
@@ -114,6 +118,8 @@ public class MainRepository<ITEM, ID> {
 
             ResultSet resultSet = pStatementSelect.executeQuery();
             resultSet.next();
+
+//            connection.close();
             return parseTupleIntoItemObject(resultSet);
 
         } catch (Exception e) {
@@ -153,6 +159,8 @@ public class MainRepository<ITEM, ID> {
             pStatementUpdate.execute();
             ResultSet resultSet = pStatementSelect.executeQuery();
             resultSet.next();
+
+//            connection.close();
             return parseTupleIntoItemObject(resultSet);
 
         } catch (Exception e) {
@@ -199,6 +207,7 @@ public class MainRepository<ITEM, ID> {
             while (rs.next()) {
                 items.add(parseTupleIntoItemObject(rs));
             }
+//            connection.close();
             return items;
         } catch (SQLException | InvocationTargetException | NoSuchMethodException | IllegalAccessException | InstantiationException e) {
             throw new RuntimeException("Ошибка в " + this.getClass() + e);
